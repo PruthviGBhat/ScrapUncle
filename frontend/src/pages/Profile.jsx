@@ -55,9 +55,7 @@ const handleDeleteUser = async () => {
     const res = await fetch(`/api/user/delete/${currentUser._id}`, {
       method: 'DELETE',
     });
-    console.log(res)
     const data = await res.json();
-    console.log(data)
     if (data.success === false) {
       dispatch(deleteUserFailure(data.message));
       return;
@@ -86,14 +84,12 @@ const handleSignOut = async () => {
 const handleListing = async () => {
   try { 
     const res = await fetch(`/api/user/listings/${currentUser._id}`);
-    console.log(res)
     const data = await res.json();
     if (data.success === false) {
       return;
     }
     setUserListings(data);
     toast.info('Your listings have been loaded below!',{position:"top-center"});
-    // navigate(`/listing/${currentUser._id}`);
   } catch (error) {
     toast.error('Error getting user listings from server: ', error);
   }
