@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nannafont{
+    font-weight: 700;
+}
+
+.nannashadow{
+    box-shadow: 9px 5px 10px 0.5px rgba(0, 0, 1, 0.4);
+}
